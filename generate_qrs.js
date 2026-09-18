@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const QRCode = require('qrcode');
 
-// 1. Replace this with your exact live Vercel domain (no trailing slash)
-const VERCEL_DOMAIN = "https://link-tree-vnit.vercel.app/";
+// Set VERCEL_BASE_URL in deployment environments; keep the verified production URL as the fallback.
+const BASE_URL = (process.env.VERCEL_BASE_URL || 'https://link-tree-vnit.vercel.app').replace(/\/+$/, '');
 
 // 2. Create output directory for image files
 const outputDir = path.join(__dirname, 'qr_codes');
@@ -18,7 +18,7 @@ console.log(`Found ${htmlFiles.length} HTML files. Generating QR codes...\n`);
 
 async function generateAllQRs() {
   for (const file of htmlFiles) {
-    const liveUrl = `${VERCEL_DOMAIN}/${file}`;
+    const liveUrl = `${BASE_URL}/${encodeURIComponent(file)}`;
     const fileBaseName = path.parse(file).name; // e.g., "prof1"
     const outputPath = path.join(outputDir, `${fileBaseName}-qr.png`);
 
