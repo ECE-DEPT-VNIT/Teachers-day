@@ -5,20 +5,26 @@ const QRCode = require('qrcode');
 // Set VERCEL_BASE_URL in deployment environments; keep the verified production URL as the fallback.
 const BASE_URL = (process.env.VERCEL_BASE_URL || 'https://link-tree-vnit.vercel.app').replace(/\/+$/, '');
 
-// 2. Create output directory for image files
+// 2. Clean and prepare output directory for image files
 const outputDir = path.join(__dirname, 'qr_codes');
-if (!fs.existsSync(outputDir)) {
+if (fs.existsSync(outputDir)) {
+  const existingFiles = fs.readdirSync(outputDir);
+  for (const f of existingFiles) {
+    fs.unlinkSync(path.join(outputDir, f));
+  }
+  console.log(`Removed ${existingFiles.length} old QR code(s) from qr_codes/`);
+} else {
   fs.mkdirSync(outputDir);
 }
 
 // 3. Scan for all .html files in the current directory
 const htmlFiles = fs.readdirSync(__dirname).filter(file => file.endsWith('.html'));
 
-console.log(`Found ${htmlFiles.length} HTML files. Generating QR codes...\n`);
+console.log(`Found ${htmlFiles.length} HTML files. Generating new QR codes...\n`);
 
 async function generateAllQRs() {
   for (const file of htmlFiles) {
-    const liveUrl = `${BASE_URL}/${encodeURIComponent(file)}`;
+    const liveUrl = file === 'index.html' ? `${BASE_URL}/` : `${BASE_URL}/${encodeURIComponent(file)}`;
     const fileBaseName = path.parse(file).name; // e.g., "prof1"
     const outputPath = path.join(outputDir, `${fileBaseName}-qr.png`);
 
@@ -31,7 +37,7 @@ async function generateAllQRs() {
           light: '#FFFFFF'
         }
       });
-      console.log(`✓ Saved QR for ${file} -> qr_codes/${fileBaseName}-qr.png`);
+      console.log(`✓ Saved QR for ${file} -> qr_codes/${fileBaseName}-qr.png (${liveUrl})`);
     } catch (err) {
       console.error(`✗ Error generating QR for ${file}:`, err);
     }
