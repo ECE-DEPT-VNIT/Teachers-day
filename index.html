@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07142d">
+  <meta name="description" content="Department of Electronics and Communication Engineering - Teachers' Day Faculty Linktrees and Digital Portals">
+  <title>ECE Department | Faculty Portals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #10213f;
+      --muted: #63728c;
+      --blue: #247cff;
+      --violet: #8659ff;
+      --line: rgba(49, 113, 210, 0.13);
+      --card: rgba(255, 255, 255, 0.9);
+      --card-border: rgba(94, 135, 210, 0.16);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #f6f9ff;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, black 10%, transparent 90%);
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      width: 56rem;
+      height: 34rem;
+      left: 50%;
+      top: -14rem;
+      transform: translateX(-50%);
+      z-index: -2;
+      background: radial-gradient(ellipse at center, rgba(44, 143, 255, 0.22), transparent 65%), radial-gradient(ellipse at 70% 25%, rgba(133, 75, 255, 0.18), transparent 52%);
+      filter: blur(12px);
+    }
+    main {
+      width: min(100% - 32px, 680px);
+      margin: 0 auto;
+      padding: 56px 0 48px;
+    }
+    .signal {
+      width: min(100%, 520px);
+      height: 34px;
+      margin: 0 auto 20px;
+      opacity: 0.7;
+      background: linear-gradient(90deg, transparent 0 6%, #56a4ff 6% 7%, transparent 7% 12%, #9068ff 12% 13%, transparent 13% 30%, #56a4ff 30% 31%, transparent 31% 100%);
+      clip-path: polygon(0 49%, 12% 49%, 16% 10%, 20% 88%, 24% 49%, 43% 49%, 49% 24%, 54% 76%, 59% 49%, 100% 49%, 100% 55%, 61% 55%, 54% 86%, 49% 32%, 43% 55%, 24% 55%, 20% 98%, 16% 18%, 12% 55%, 0 55%);
+    }
+    header.hero {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #247cff;
+      background: rgba(36, 124, 255, 0.1);
+      border: 1px solid rgba(36, 124, 255, 0.2);
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 2.75rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      background: linear-gradient(135deg, #10213f 30%, #2f77ed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      max-width: 520px;
+      margin: 12px auto 0;
+      color: #3e5a88;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    .desc {
+      max-width: 480px;
+      margin: 8px auto 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    #qr-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 28px 0;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px dashed rgba(94, 135, 210, 0.3);
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+    }
+    #qr-container .qr-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    #qr-code-img {
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 10px;
+      box-shadow: 0 10px 25px rgba(36, 71, 133, 0.12);
+      border: 1px solid rgba(94, 135, 210, 0.15);
+    }
+    .grid-container {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .faculty-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-height: 76px;
+      padding: 12px 18px;
+      color: var(--ink);
+      text-decoration: none;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(36, 71, 133, 0.06);
+      backdrop-filter: blur(10px);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .faculty-card:hover, .faculty-card:focus-visible {
+      transform: translateY(-3px);
+      border-color: rgba(47, 123, 255, 0.6);
+      box-shadow: 0 14px 30px rgba(50, 95, 190, 0.14);
+      outline: none;
+    }
+    .faculty-avatar {
+      flex: 0 0 54px;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      padding: 2px;
+      background: linear-gradient(135deg, #3aa9ff, #8059ff);
+      box-shadow: 0 4px 12px rgba(58, 169, 255, 0.25);
+    }
+    .faculty-avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      background: #e7efff;
+    }
+    .faculty-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .faculty-name {
+      display: block;
+      font-size: 1.02rem;
+      font-weight: 750;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .faculty-dept {
+      display: block;
+      margin-top: 3px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .faculty-arrow {
+      color: #8093b2;
+      font-size: 1.25rem;
+      margin-left: 8px;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+    .faculty-card:hover .faculty-arrow {
+      transform: translateX(3px);
+      color: #247cff;
+    }
+    footer {
+      margin-top: 36px;
+      color: #8795aa;
+      text-align: center;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .faculty-card, .faculty-arrow { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="signal" aria-hidden="true"></div>
+    <header class="hero">
+      <span class="badge">VNIT &middot; ECE Department</span>
+      <h1>Teachers' Day Portals</h1>
+      <p class="subtitle">Electronics &amp; Communication Engineering</p>
+      <p class="desc">Explore faculty linktrees, research portfolios, and contact information.</p>
+    </header>
+
+    <div id="qr-container">
+      <span class="qr-label">Scan to share this portal</span>
+      <img id="qr-code-img" alt="QR Code" style="display:none; max-width: 200px; height: auto;" />
+    </div>
+
+    <div class="grid-container">
+      <a class="faculty-card" href="./ece-abhay-g7n2.html">
+        <div class="faculty-avatar">
+          <img src="./profile-pics/abhay-gandhi.png" alt="Portrait of Prof. Abhay Gandhi">
+        </div>
+        <div class="faculty-info">
+          <span class="faculty-name">Prof. Abhay Gandhi</span>
+          <span class="faculty-dept">Department of Electronics &amp; Communication Engineering</span>
+        </div>
+        <span class="faculty-arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a class="faculty-card" href="./ece-ashwin-k2m6.html">
+        <div class="faculty-avatar">
+          <img src="./profile-pics/ashwin-kothari.png" alt="Portrait of Prof. Ashwin Kothari">
+        </div>
+        <div class="faculty-info">
+          <span class="faculty-name">Prof. Ashwin Kothari</span>
+          <span class="faculty-dept">Department of Electronics &amp; Communication Engineering</span>
+        </div>
+        <span class="faculty-arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a class="faculty-card" href="./ece-deep-d9v4.html">
+        <div class="faculty-avatar">
+          <img src="./profile-pics/deep-gupta.png" alt="Portrait of Prof. Deep Gupta">
+        </div>
+        <div class="faculty-info">
+          <span class="faculty-name">Prof. Deep Gupta</span>
+          <span class="faculty-dept">Department of Electronics &amp; Communication Engineering</span>
+        </div>
+        <span class="faculty-arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a class="faculty-card" href="./ece-joydeep-q8k5.html">
+        <div class="faculty-avatar">
+          <img src="./profile-pics/joydeep-sengupta.jpg" alt="Portrait of Prof. Joydeep Sengupta">
+        </div>
+        <div class="faculty-info">
+          <span class="faculty-name">Prof. Joydeep Sengupta</span>
+          <span class="faculty-dept">Department of Electronics &amp; Communication Engineering</span>
+        </div>
+        <span class="faculty-arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a class="faculty-card" href="./ece-kishor-b4q8.html">
+        <div class="faculty-avatar">
+          <img src="./profile-pics/kishor-bhurchandi.jpg" alt="Portrait of Prof. Kishor Bhurchandi">
+        </div>
+        <div class="faculty-info">
+          <span class="faculty-name">Prof. Kishor Bhurchandi</span>
+          <span class="faculty-dept">Department of Electronics &amp; Communication Engineering</span>
+        </div>
+        <span class="faculty-arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a class="faculty-card" href="./ece-neeraj-r2x9.html">
+        <div class="faculty-avatar">
+          <img src="./profile-pics/neeraj-rao.jpg" alt="Portrait of Prof. Neeraj Rao">
+        </div>
+        <div class="faculty-info">
+          <span class="faculty-name">Prof. Neeraj Rao</span>
+          <span class="faculty-dept">Department of Electronics &amp; Communication Engineering</span>
+        </div>
+        <span class="faculty-arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a class="faculty-card" href="./ece-prabhat-p5d3.html">
+        <div class="faculty-avatar">
+          <img src="./profile-pics/prabhat-sharma.jpeg" alt="Portrait of Prof. Prabhat Sharma">
+        </div>
+        <div class="faculty-info">
+          <span class="faculty-name">Prof. Prabhat Sharma</span>
+          <span class="faculty-dept">Department of Electronics &amp; Communication Engineering</span>
+        </div>
+        <span class="faculty-arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a class="faculty-card" href="./ece-pradnya-h3j7.html">
+        <div class="faculty-avatar">
+          <img src="./profile-pics/pradnya-ghare.png" alt="Portrait of Prof. Pradnya Ghare">
+        </div>
+        <div class="faculty-info">
+          <span class="faculty-name">Prof. Pradnya Ghare</span>
+          <span class="faculty-dept">Department of Electronics &amp; Communication Engineering</span>
+        </div>
+        <span class="faculty-arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a class="faculty-card" href="./ece-saugata-f6w0.html">
+        <div class="faculty-avatar">
+          <img src="./profile-pics/saugata-sinha.jpg" alt="Portrait of Prof. Saugata Sinha">
+        </div>
+        <div class="faculty-info">
+          <span class="faculty-name">Prof. Saugata Sinha</span>
+          <span class="faculty-dept">Department of Electronics &amp; Communication Engineering</span>
+        </div>
+        <span class="faculty-arrow" aria-hidden="true">&#8594;</span>
+      </a>
+
+      <a class="faculty-card" href="./ece-vishal-s8r1.html">
+        <div class="faculty-avatar">
+          <img src="./profile-pics/vishal-satpute.png" alt="Portrait of Prof. Vishal Satpute">
+        </div>
+        <div class="faculty-info">
+          <span class="faculty-name">Prof. Vishal Satpute</span>
+          <span class="faculty-dept">Department of Electronics &amp; Communication Engineering</span>
+        </div>
+        <span class="faculty-arrow" aria-hidden="true">&#8594;</span>
+      </a>
+    </div>
+
+    <footer>ECE &middot; Connect &middot; Collaborate</footer>
+  </main>
+  <script src="./script.js?v=1.0.1"></script>
+</body>
+</html>
