@@ -30,7 +30,7 @@
     footer { margin-top:28px; color:#8795aa; text-align:center; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; }
     @media (min-width:640px) { main { padding-top:76px; } .links-container { gap:14px; } }
     @media (prefers-reduced-motion:reduce) { .link-card { transition:none; } }
-  </style>
+  .profile-details{display:grid;gap:10px;margin-top:24px;padding:18px 20px;color:var(--muted);text-align:left;background:rgba(255,255,255,.7);border:1px solid rgba(94,135,210,.12);border-radius:18px;box-shadow:0 8px 25px rgba(36,71,133,.05);font-size:.84rem;line-height:1.6}.profile-details p{margin:0}.profile-details strong{color:var(--ink);font-weight:750}</style>
 </head>
 <body>
   <main>
@@ -39,16 +39,15 @@
       <div class="avatar-ring"><img src="./profile-pics/abhay-gandhi.png" alt="Portrait of Prof. Abhay Gandhi"></div>
       <h1>Prof. Abhay Gandhi</h1>
       <p class="title">Department of Electronics &amp; Communication Engineering</p>
-      <p class="bio">Research, teaching, and collaboration in electronics and communication engineering.</p>
-    </header>
+      <p class="bio">Professor working in wireless communication, RF circuits and systems, and computer networks. He has published more than 65 research papers in SCI/Scopus journals and international conferences.</p>
+    <section class="profile-details" aria-label="Education and research"><p><strong>Education</strong> B.E. Electronic Engineering, VRCE (1989); M.E. ECE, Indian Institute of Science, Bangalore (1991); Ph.D. Electronic Engineering, VRCE (2002).</p><p><strong>Research</strong> Wireless communication, RF circuits, computer networks, and RFIC design.</p><p><strong>Research record</strong> More than 65 journal and international conference papers; 10 Ph.D. scholars completed under his guidance.</p></section></header>
     <div class="links-container">
       <a class="link-card" href="https://www.linkedin.com/in/abhay-gandhi-0615242/" target="_blank" rel="noopener noreferrer">
         <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 9v8M7 6v.01M11 17v-5a3 3 0 0 1 6 0v5M11 12V9"/><path d="M3 3h18v18H3z"/></svg></span>
         <span><strong>LinkedIn</strong><small>Professional profile</small></span>
         <span class="arrow" aria-hidden="true">&#8594;</span>
       </a>
-    </div>
-    <footer>ECE &middot; Connect &middot; Collaborate</footer>
+    <a class="link-card" href="https://vnit.ac.in/engineering/ece/dr-a-s-gandhi/" target="_blank" rel="noopener noreferrer"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><span><strong>VNIT Faculty Profile</strong><small>Education, research and publications</small></span><span class="arrow">&#8594;</span></a></div><footer>ECE &middot; Connect &middot; Collaborate</footer>
   </main>
   <script src="./script.js?v=1.0.1"></script>
 </body>
