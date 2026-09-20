@@ -26,7 +26,7 @@ async function generateAllQRs() {
   for (const file of htmlFiles) {
     const liveUrl = file === 'index.html' ? `${BASE_URL}/` : `${BASE_URL}/${encodeURIComponent(file)}`;
     const fileBaseName = path.parse(file).name; // e.g., "prof1"
-    const outputPath = path.join(outputDir, `${fileBaseName}-qr.svg`);
+    const outputPath = path.join(outputDir, `${fileBaseName}-qr.png`);
 
     try {
       await QRCode.toFile(outputPath, liveUrl, {
@@ -36,7 +36,7 @@ async function generateAllQRs() {
           light: '#FFFFFF'
         }
       });
-      console.log(`✓ Saved QR for ${file} -> qr_codes/${fileBaseName}-qr.svg (${liveUrl})`);
+      console.log(`✓ Saved QR for ${file} -> qr_codes/${fileBaseName}-qr.png (${liveUrl})`);
     } catch (err) {
       console.error(`✗ Error generating QR for ${file}:`, err);
     }
