@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --theme-bg: #0b1220;
+  --theme-surface: #131c2e;
+  --theme-surface-elevated: #1a253c;
+  --theme-ink: #f1f5f9;
+  --theme-secondary: rgba(241, 245, 249, 0.68);
+  --theme-muted: rgba(241, 245, 249, 0.46);
+  --theme-copper: #c88a3a;
+  --theme-copper-soft: rgba(200, 138, 58, 0.13);
+  --theme-copper-border: rgba(200, 138, 58, 0.36);
+  --theme-teal: #2aa896;
+  --theme-teal-soft: rgba(42, 168, 150, 0.14);
+  --theme-line: rgba(203, 213, 225, 0.1);
+}
+
+body {
+  color: var(--theme-ink) !important;
+  font-family: Inter, sans-serif !important;
+  background: var(--theme-bg) !important;
+}
+
+body::before {
+  background-image: linear-gradient(var(--theme-line) 1px, transparent 1px), linear-gradient(90deg, var(--theme-line) 1px, transparent 1px) !important;
+}
+
+body::after {
+  background: radial-gradient(ellipse at center, rgba(200, 138, 58, 0.12), transparent 65%), radial-gradient(ellipse at 70% 25%, rgba(42, 168, 150, 0.1), transparent 52%) !important;
+}
+
+h1, .faculty-name, .profile h1 {
+  font-family: 'Instrument Serif', Georgia, serif !important;
+  letter-spacing: 0 !important;
+}
+
+.badge, .qr-label, .faculty-dept, footer, .title, .profile-details strong {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+h1 {
+  background: none !important;
+  color: var(--theme-ink) !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+.badge {
+  color: var(--theme-copper) !important;
+  background: var(--theme-copper-soft) !important;
+  border-color: var(--theme-copper-border) !important;
+}
+
+.subtitle, .title { color: var(--theme-secondary) !important; }
+.desc, .bio, .faculty-dept, .qr-label, .arrow { color: var(--theme-muted) !important; }
+
+#qr-container, .faculty-card, .link-card, .profile-details {
+  background: var(--theme-surface) !important;
+  border-color: var(--theme-line) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28) !important;
+}
+
+#qr-code-img { border-color: var(--theme-line) !important; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35) !important; }
+.faculty-card:hover, .faculty-card:focus-visible, .link-card:hover, .link-card:focus-visible { border-color: var(--theme-copper) !important; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.42) !important; }
+.faculty-avatar, .avatar-ring { background: linear-gradient(135deg, var(--theme-copper), var(--theme-teal)) !important; box-shadow: 0 6px 18px rgba(200, 138, 58, 0.2) !important; }
+.faculty-avatar img, .avatar-ring img { background: var(--theme-surface-elevated) !important; }
+.icon { color: var(--theme-copper) !important; background: var(--theme-copper-soft) !important; }
+.link-card strong, .faculty-name { color: var(--theme-ink) !important; }
+
+.signal { background: linear-gradient(90deg, transparent 0 6%, var(--theme-copper) 6% 7%, transparent 7% 12%, var(--theme-teal) 12% 13%, transparent 13% 30%, var(--theme-copper) 30% 31%, transparent 31% 100%) !important; }

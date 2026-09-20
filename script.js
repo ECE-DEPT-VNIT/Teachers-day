@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const themeLink = document.createElement("link");
+  themeLink.rel = "stylesheet";
+  themeLink.href = "./theme.css";
+  document.head.appendChild(themeLink);
+
   const educationByPage = {
     "ece-ankit-bhurane.html": "B.E. Electronics and Communication, Sant Gadge Baba Amravati University (2008); M.Tech. Electronics, SGGSIET, Nanded (2011); Ph.D. Signal Processing, Indian Institute of Technology Bombay (2016).",
     "ece-surendar-kannaiyan.html": "B.E. ECE, Bharathidasan University (2004); M.Tech. Control and Instrumentation, NIT Trichy (2006); Ph.D. Modelling, Control and Estimation, IIT Bombay (2021).",
