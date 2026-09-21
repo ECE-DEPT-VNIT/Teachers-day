@@ -34,6 +34,16 @@ document.addEventListener("DOMContentLoaded", () => {
     "ece-amit-a7k4.html": "9999746128",
     "ece-vipin-k9d2.html": "8055663524"
   };
+  const scholarByPage = {
+    "ece-ashwin-k2m6.html": "https://share.google/EJUAlMd1dwcJZ86BR",
+    "ece-ankit-b8m5.html": "https://share.google/t20dCk4k8CjAoMEIQ",
+    "ece-kishor-b4q8.html": "https://share.google/iwejDpLpID3RV63mu",
+    "ece-prabhat-p5d3.html": "https://share.google/YV6TC5CvOHaruDJ4D",
+    "ece-joydeep-q8k5.html": "https://share.google/CgHnj4i8DukoK4Nbs",
+    "ece-vishal-s8r1.html": "https://share.google/rSO6SnEm2fY9x1tAw",
+    "ece-pradnya-h3j7.html": "https://share.google/HUylymWIgYAXH1Y9m",
+    "ece-saugata-f6w0.html": "https://share.google/smbkxMddWkMtSDLqf"
+  };
   const profileDetails = document.querySelector(".profile-details");
   const pageName = window.location.pathname.split("/").pop();
   if (profileDetails && educationByPage[pageName] && !profileDetails.querySelector("[data-education]")) {
@@ -44,6 +54,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const linksContainer = document.querySelector(".links-container");
+  const scholarUrl = scholarByPage[pageName];
+  if (linksContainer && scholarUrl && !linksContainer.querySelector("[data-scholar]")) {
+    const scholarLink = document.createElement("a");
+    scholarLink.className = "link-card";
+    scholarLink.href = scholarUrl;
+    scholarLink.target = "_blank";
+    scholarLink.rel = "noopener noreferrer";
+    scholarLink.dataset.scholar = "true";
+    scholarLink.innerHTML = '<span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><span><strong>Google Scholar</strong><small>Research publications</small></span><span class="arrow" aria-hidden="true">&#8594;</span>';
+    linksContainer.appendChild(scholarLink);
+  }
   const whatsappNumber = whatsappByPage[pageName];
   if (linksContainer && whatsappNumber && !linksContainer.querySelector("[data-whatsapp]")) {
     const whatsappLink = document.createElement("a");
